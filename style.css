@@ -1,0 +1,328 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+header {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	background: #333;
+	color: #fff;
+	padding: 20px 0;
+	z-index: 100;
+}
+
+header h1 {
+	text-align: center;
+}
+
+header nav ul {
+	list-style: none;
+	text-align: center;
+	margin-top: 10px;
+}
+
+header nav ul li {
+	display: inline;
+	margin: 0 15px;
+}
+
+header nav ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.hero {
+	margin-top: 126.5px;
+	background: url("hero-image.jpg") no-repeat center center/cover;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.hero h2 {
+	font-size: 2.5rem;
+}
+
+.hero p {
+	font-size: 1.2rem;
+}
+
+.cta-btn {
+	background: #e8491d;
+	color: #fff;
+	padding: 10px 20px;
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 20px;
+	border-radius: 5px;
+}
+
+.services {
+	padding: 40px 0;
+	background: #f4f4f4;
+}
+
+.services h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.service-item {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.about {
+	padding: 40px 0;
+}
+
+.contact {
+	padding: 40px 0;
+}
+
+footer {
+	background: #333;
+	color: #fff;
+	text-align: center;
+	padding: 20px 0;
+}
+
+.contact-form {
+	padding: 40px 0;
+	background: #f9f9f9;
+}
+
+.contact-form h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.contact-form .form-group {
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contact-form label {
+	margin-bottom: 5px;
+	font-size: 1.1rem;
+	text-align: start;
+}
+
+.contact-form input {
+	width: 100%;
+	max-width: 400px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 1rem;
+}
+
+.contact-form .submit-btn {
+	display: block;
+	margin: 0 auto;
+	padding: 10px 20px;
+	background-color: #e8491d;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1.1rem;
+}
+
+.contact-form .submit-btn:hover {
+	background-color: #c03818;
+}
+
+/* Стили для модального окна */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-content {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 500px;
+	width: 100%;
+	text-align: center;
+}
+
+.modal-content p {
+	font-size: 1.2rem;
+}
+
+.close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+/* Мигающая кнопка */
+.blinking-btn {
+	padding: 5px 10px;
+	background-color: #e8491d;
+	color: #fff;
+	border-radius: 15px;
+	text-decoration: none;
+	font-weight: bold;
+	animation: blinking 1.5s infinite; /* Анимация мигания */
+}
+
+.blinking-btn:hover {
+	background-color: #c03818;
+}
+
+@keyframes blinking {
+	0% {
+		opacity: 1;
+		transform: scale(3);
+	}
+	50% {
+		opacity: 0.7;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(3);
+	}
+}
+
+.contact-list {
+	display: flex;
+	flex-direction: column;
+}
+.reviews-section {
+	padding: 50px 0;
+	background-color: #f4f4f4;
+}
+
+.reviews-section h2 {
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 2rem;
+	color: #333;
+}
+
+.reviews-carousel {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.reviews-wrapper {
+	overflow: hidden;
+	width: 100%;
+}
+
+.reviews {
+	display: flex;
+	transition: transform 0.5s ease;
+	justify-content: center;
+	align-items: center;
+}
+
+.review {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	text-align: center;
+	min-width: 100%; /* Каждый отзыв занимает 100% ширины контейнера на мобильных устройствах */
+	box-sizing: border-box;
+	max-width: 200px;
+	height: 350px;
+}
+
+.review p {
+	display: -webkit-box; /* Используем для создания блок-контейнера с ограничением по строкам */
+	-webkit-box-orient: vertical; /* Указываем вертикальную ориентацию блок-контейнера */
+	-webkit-line-clamp: 5; /* Ограничиваем текст 5 строками */
+	overflow: hidden; /* Прячем текст, который не умещается */
+	text-overflow: ellipsis; /* Добавляем многоточие для скрытого текста */
+	line-height: 1.5; /* Контролируем высоту строки для более точного контроля над количеством строк */
+	max-height: calc(
+		1.5em * 5
+	); /* Указываем максимальную высоту блока с учетом высоты строки */
+}
+.review img {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+.review h3 {
+	font-size: 1.2rem;
+	margin-bottom: 10px;
+	color: #e8491d;
+}
+
+.review p {
+	font-size: 1rem;
+	color: #555;
+}
+
+.carousel-btn {
+	background-color: transparent;
+	border: none;
+	font-size: 2rem;
+	cursor: pointer;
+	color: #e8491d;
+	padding: 10px;
+}
+
+.carousel-btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/* Медиазапросы: обычное представление отзывов на экранах шириной более 550px */
+@media (min-width: 550px) {
+	.reviews-carousel {
+		display: block;
+	}
+
+	.reviews {
+		display: flex;
+		flex-wrap: wrap; /* Позволяем отзывам занимать несколько строк */
+	}
+
+	.review {
+		min-width: calc(33.333% - 20px); /* 3 отзыва в ряд, с учетом отступов */
+		margin: 10px;
+	}
+
+	.carousel-btn {
+		display: none; /* Убираем кнопки карусели на больших экранах */
+	}
+}

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Казахаские карты</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- Модальное окно -->
+		<section id="modal" class="modal">
+			<article class="modal-content">
+				<span class="close">&times;</span>
+				<p>Ваша заявка успешно отправлена!</p>
+			</article>
+		</section>
+
+		<header>
+			<div class="container">
+				<h1>Казахаские карты</h1>
+				<nav>
+					<ul>
+						<li><a href="#home">Главная</a></li>
+						<li><a href="#services">Услуги</a></li>
+						<li><a href="#about">О нас</a></li>
+						<li><a href="#contact">Контакты</a></li>
+						<li>
+							<a href="#contact-form" class="blinking-btn"
+								>Оформить карту</a
+							>
+						</li>
+						<!-- Мигающая кнопка -->
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Главный баннер -->
+		<section id="home" class="hero">
+			<div class="container">
+				<h2>Создайте платежную карту онлайн</h2>
+				<p>Быстрое и безопасное создание виртуальной карты.</p>
+				<a href="#contact-form" class="cta-btn">Оформить карту</a>
+			</div>
+		</section>
+
+		<!-- Услуги -->
+		<section id="services" class="services">
+			<div class="container">
+				<h2>Наши услуги</h2>
+				<div class="service-item">
+					<h3>Виртуальные карты</h3>
+					<p>
+						Создавайте и управляйте своими виртуальными картами с
+						легкостью.
+					</p>
+				</div>
+				<div class="service-item">
+					<h3>Мобильные платежи</h3>
+					<p>Быстрые и удобные платежи через мобильные устройства.</p>
+				</div>
+				<div class="service-item">
+					<h3>Безопасные переводы</h3>
+					<p>Надежные и защищенные переводы между счетами.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- О нас -->
+		<section id="about" class="about">
+			<div class="container">
+				<h2>О компании</h2>
+				<p>
+					Мы предлагаем безопасные и быстрые решения для управления
+					вашими платежами.
+				</p>
+			</div>
+		</section>
+
+		<section id="reviews" class="reviews-section">
+			<div class="container">
+				<h2>Отзывы наших клиентов</h2>
+				<div class="reviews-carousel">
+					<button class="carousel-btn prev-btn">‹</button>
+					<div class="reviews-wrapper">
+						<div class="reviews">
+							<div class="review">
+								<img
+									src="https://via.placeholder.com/100"
+									alt="Пользователь 1"
+								/>
+								<h3>Александр Иванов</h3>
+								<p>
+									"Очень доволен сервисом KZ PayCard. Карта
+									пришла быстро, а использование оказалось
+									простым и удобным. Рекомендую всем!"
+								</p>
+							</div>
+
+							<div class="review">
+								<img
+									src="https://via.placeholder.com/100"
+									alt="Пользователь 2"
+								/>
+								<h3>Мария Петрова</h3>
+								<p>
+									"KZ PayCard значительно упростила мои
+									платежи. Поддержка клиентов на высшем
+									уровне, всегда помогут и подскажут."
+								</p>
+							</div>
+
+							<div class="review">
+								<img
+									src="https://via.placeholder.com/100"
+									alt="Пользователь 3"
+								/>
+								<h3>Олег Сидоров</h3>
+								<p>
+									"Карта работает без проблем, удобно
+									использовать для всех видов платежей.
+									Большое спасибо за качественный продукт!"
+								</p>
+							</div>
+						</div>
+					</div>
+					<button class="carousel-btn next-btn">›</button>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact-form" class="contact-form">
+			<div class="container">
+				<h2>Оставьте заявку на офрмление карты</h2>
+				<form id="form" action="submit_form.php" method="POST">
+					<section class="form-group">
+						<label for="name">Имя:</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							placeholder="Введите ваше имя"
+							required
+						/>
+					</section>
+
+					<section class="form-group">
+						<label for="phone">Номер телефона:</label>
+						<input
+							type="tel"
+							id="phone"
+							name="phone"
+							placeholder="Введите номер телефона"
+							required
+						/>
+					</section>
+
+					<section class="form-group">
+						<label for="telegram">Аккаунт в Telegram:</label>
+						<input
+							type="text"
+							id="telegram"
+							name="telegram"
+							placeholder="@username"
+							required
+						/>
+					</section>
+
+					<button type="submit" class="submit-btn">Отправить</button>
+				</form>
+			</div>
+		</section>
+
+		<!-- Контакты -->
+		<section id="contact" class="contact">
+			<div class="container">
+				<h2>Контакты</h2>
+				<article class="contact-list">
+					<a href="mailto:support@kzcards.com"
+						>Email: support@kzcards.com</a
+					>
+					<a href="tel:+71234567890">Телефон: +7 (123) 456-7890</a>
+					<a href="tg://resolve?domain=domain">Telegram: @domain</a>
+				</article>
+			</div>
+		</section>
+
+		<!-- Подвал сайта -->
+		<footer>
+			<div class="container">
+				<p>&copy; 2024 Казахаские карты Все права защищены.</p>
+			</div>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>
