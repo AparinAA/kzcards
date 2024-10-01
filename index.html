@@ -1,198 +1,244 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Казахаские карты</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Worldcard Shop</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<!-- Модальное окно -->
-		<section id="modal" class="modal">
-			<article class="modal-content">
-				<span class="close">&times;</span>
-				<p>Ваша заявка успешно отправлена!</p>
-			</article>
-		</section>
-
+		<!-- Header Section -->
 		<header>
-			<div class="container">
-				<h1>Казахаские карты</h1>
+			<div class="logo">Worldcard.shop</div>
+			<div class="navbar">
 				<nav>
-					<ul>
-						<li><a href="#home">Главная</a></li>
-						<li><a href="#services">Услуги</a></li>
-						<li><a href="#about">О нас</a></li>
+					<ul id="nav-menu" class="nav-links">
+						<li><a href="#steps">Как открыть</a></li>
+						<li><a href="#testimonials">Отзывы</a></li>
+						<li><a href="#pricing">Стоимость</a></li>
+						<li><a href="#consultation">Консультация</a></li>
 						<li><a href="#contact">Контакты</a></li>
-						<li>
-							<a href="#contact-form" class="blinking-btn"
-								>Оформить карту</a
-							>
-						</li>
-						<!-- Мигающая кнопка -->
 					</ul>
+					<div class="burger" id="burger-menu">
+						<div class="line1"></div>
+						<div class="line2"></div>
+						<div class="line3"></div>
+					</div>
 				</nav>
 			</div>
 		</header>
 
-		<!-- Главный баннер -->
-		<section id="home" class="hero">
-			<div class="container">
-				<h2>Создайте платежную карту онлайн</h2>
-				<p>Быстрое и безопасное создание виртуальной карты.</p>
-				<a href="#contact-form" class="cta-btn">Оформить карту</a>
+		<!-- Hero Section -->
+		<section class="block hero">
+			<div class="hero-content">
+				<h1>Международные карты</h1>
+				<div class="hero-features">
+					<div>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 64 64"
+							width="64"
+							height="64"
+						>
+							<circle cx="32" cy="32" r="20" fill="#ffd700" />
+							<path
+								d="M32 12v40M22 32h20"
+								stroke="#000"
+								stroke-width="2"
+								stroke-linecap="round"
+							/>
+							<text
+								x="32"
+								y="38"
+								font-size="12"
+								text-anchor="middle"
+								fill="#000"
+							>
+								$
+							</text>
+							<path
+								d="M24 44l4 6h8l4-6"
+								fill="#ffd700"
+								stroke="#000"
+								stroke-width="2"
+							/>
+						</svg>
+						Готовая карта за 5-7 рабочих дней
+					</div>
+					<div>Удаленное оформление</div>
+					<div>Гарантия лучшей цены</div>
+				</div>
+				<button class="cta-button">Оформить</button>
+				<a class="info-button" href="#services">Подробнее</a>
+			</div>
+			<div class="card-image">
+				<img src="public/card.webp" alt="Mastercard" />
 			</div>
 		</section>
 
-		<!-- Услуги -->
-		<section id="services" class="services">
-			<div class="container">
-				<h2>Наши услуги</h2>
-				<div class="service-item">
-					<h3>Виртуальные карты</h3>
+		<!-- Services Section -->
+		<section id="services" class="block services">
+			<h2>Оплачивайте любимые сервисы и живите как раньше</h2>
+			<p>
+				Карты иностранных банков принимаются к оплате всеми европейскими
+				и американскими сервисами.
+			</p>
+			<div class="services-logos">
+				<img src="public/airbnb-ar21.svg" alt="Airbnb" />
+				<img src="public/amazon-ar21.svg" alt="Amazon" />
+				<img
+					src="public/apple_appstore-ar21.svg"
+					alt="Apple App Store"
+				/>
+				<img src="public/booking-ar21.svg" alt="Booking" />
+				<img src="public/canva-ar21.svg" alt="Canva" />
+				<img src="public/ebay-ar21.svg" alt="Ebay" />
+				<img src="public/figma-ar21.svg" alt="Figma" />
+				<img src="public/netflix-ar21.svg" alt="Netflix" />
+				<img src="public/spotify-ar21.svg" alt="Spotify" />
+				<img src="public/xbox-ar21.svg" alt="Xbox" />
+				<img src="public/youtube-ar21.svg" alt="YouTube" />
+				<img src="public/zoomus-ar21.svg" alt="Zoom" />
+			</div>
+		</section>
+
+		<!-- Steps Section -->
+		<section id="steps" class="block steps">
+			<div class="card-image">
+				<img src="public/card.webp" alt="Mastercard" class="" />
+			</div>
+			<div>
+				<h2>Шаги открытия</h2>
+				<div class="step">
+					<h3>1 Оплата и отправка документов</h3>
 					<p>
-						Создавайте и управляйте своими виртуальными картами с
-						легкостью.
+						Мы отправляем документы на создание ИИН. На его создание
+						уйдет 2-3 рабочих дня.
 					</p>
 				</div>
-				<div class="service-item">
-					<h3>Мобильные платежи</h3>
-					<p>Быстрые и удобные платежи через мобильные устройства.</p>
+				<div class="step">
+					<h3>2 Оформление карты</h3>
+					<p>
+						После получения ИИН подаем документы на открытие счета
+						(1-2 дня).
+					</p>
 				</div>
-				<div class="service-item">
-					<h3>Безопасные переводы</h3>
-					<p>Надежные и защищенные переводы между счетами.</p>
+				<div class="step">
+					<h3>3 Верификация</h3>
+					<p>Вам придет SMS с инструкциями по верификации.</p>
 				</div>
+				<div class="step">
+					<h3>4 Пластиковая карта</h3>
+					<p>
+						Заказ и доставка карты. Итог: процесс занимает 5-7
+						рабочих дней.
+					</p>
+				</div>
+				<button class="cta-button">Оформить</button>
 			</div>
 		</section>
 
-		<!-- О нас -->
-		<section id="about" class="about">
-			<div class="container">
-				<h2>О компании</h2>
+		<!-- Pricing Section -->
+		<section id="pricing" class="block pricing">
+			<div class="pricing-card">
+				<div class="pricing-header">
+					<div class="pricing-header-pr">
+						<h3>Международная карта</h3>
+						<p>12 000 ₽</p>
+					</div>
+					<img src="public/mastercard-logo.svg" alt="mastercard" />
+				</div>
+				<ul>
+					<li>Срок изготовления: 7 рабочих дней</li>
+					<li>Срок действия: 3 года</li>
+					<li>Валюты: тенге, доллар, евро, рубль и др.</li>
+					<li>
+						Пополнение: Сбербанк, Райфайзен, МТС банк, Золотая
+						корона
+					</li>
+				</ul>
+				<button class="cta-button">Оформить</button>
+			</div>
+		</section>
+
+		<!-- Testimonials Section -->
+		<section id="testimonials" class="block testimonials">
+			<h2>Отзывы довольных клиентов</h2>
+			<div class="testimonial">
 				<p>
-					Мы предлагаем безопасные и быстрые решения для управления
-					вашими платежами.
+					Отличная карта! Оформил быстро, все сервисы работают без
+					проблем.
+				</p>
+			</div>
+			<div class="testimonial">
+				<p>
+					Очень доволен. Все было сделано за несколько дней, карта
+					работает идеально.
+				</p>
+			</div>
+			<!-- Add more testimonials as needed -->
+		</section>
+		<section id="consultation" class="block consultation">
+			<h3>Бесплатная консультация</h3>
+			<form>
+				<input type="text" placeholder="Ваше имя" required />
+				<input type="tel" placeholder="Телефон" required />
+				<button type="submit">Оставить заявку</button>
+			</form>
+		</section>
+
+		<!-- Features Section -->
+		<section id="features" class="block features">
+			<h3>Почему выбирают именно нас?</h3>
+			<div class="feature">
+				<h4>Поддержка на всех этапах</h4>
+				<p>
+					Консультируем подробно и быстро 24/7, есть услуга
+					“персональный менеджер”.
+				</p>
+			</div>
+			<div class="feature">
+				<h4>Быстрая доставка</h4>
+				<p>Быстро доставим вашу карту в регионы и по Москве.</p>
+			</div>
+			<div class="feature">
+				<h4>Гарантия возврата денег</h4>
+				<p>
+					Вернем все в полном объеме, если не выполним обязательства.
 				</p>
 			</div>
 		</section>
 
-		<section id="reviews" class="reviews-section">
-			<div class="container">
-				<h2>Отзывы наших клиентов</h2>
-				<div class="reviews-carousel">
-					<button class="carousel-btn prev-btn">‹</button>
-					<div class="reviews-wrapper">
-						<div class="reviews">
-							<div class="review">
-								<img
-									src="https://via.placeholder.com/100"
-									alt="Пользователь 1"
-								/>
-								<h3>Александр Иванов</h3>
-								<p>
-									"Очень доволен сервисом KZ PayCard. Карта
-									пришла быстро, а использование оказалось
-									простым и удобным. Рекомендую всем!"
-								</p>
-							</div>
-
-							<div class="review">
-								<img
-									src="https://via.placeholder.com/100"
-									alt="Пользователь 2"
-								/>
-								<h3>Мария Петрова</h3>
-								<p>
-									"KZ PayCard значительно упростила мои
-									платежи. Поддержка клиентов на высшем
-									уровне, всегда помогут и подскажут."
-								</p>
-							</div>
-
-							<div class="review">
-								<img
-									src="https://via.placeholder.com/100"
-									alt="Пользователь 3"
-								/>
-								<h3>Олег Сидоров</h3>
-								<p>
-									"Карта работает без проблем, удобно
-									использовать для всех видов платежей.
-									Большое спасибо за качественный продукт!"
-								</p>
-							</div>
-						</div>
-					</div>
-					<button class="carousel-btn next-btn">›</button>
-				</div>
-			</div>
+		<!-- Contact Section -->
+		<section id="contact" class="block contact">
+			<h3>Контакты и реквизиты</h3>
+			<p>Менеджер Роман</p>
+			<p>+7 911 111 11 11</p>
+			<p>
+				E-mail:
+				<a href="mailto:world.card.shop8@gmail.com"
+					>world.card.shop8@gmail.com</a
+				>
+			</p>
+			<a class="contact_button whatsapp_button" href=""
+				>Написать в WhatsApp</a
+			>
+			<a class="contact_button telegram_button" href="" target="_blank"
+				>Написать в Telegram</a
+			>
 		</section>
 
-		<section id="contact-form" class="contact-form">
-			<div class="container">
-				<h2>Оставьте заявку на офрмление карты</h2>
-				<form id="form" action="submit_form.php" method="POST">
-					<section class="form-group">
-						<label for="name">Имя:</label>
-						<input
-							type="text"
-							id="name"
-							name="name"
-							placeholder="Введите ваше имя"
-							required
-						/>
-					</section>
-
-					<section class="form-group">
-						<label for="phone">Номер телефона:</label>
-						<input
-							type="tel"
-							id="phone"
-							name="phone"
-							placeholder="Введите номер телефона"
-							required
-						/>
-					</section>
-
-					<section class="form-group">
-						<label for="telegram">Аккаунт в Telegram:</label>
-						<input
-							type="text"
-							id="telegram"
-							name="telegram"
-							placeholder="@username"
-							required
-						/>
-					</section>
-
-					<button type="submit" class="submit-btn">Отправить</button>
-				</form>
-			</div>
-		</section>
-
-		<!-- Контакты -->
-		<section id="contact" class="contact">
-			<div class="container">
-				<h2>Контакты</h2>
-				<article class="contact-list">
-					<a href="mailto:support@kzcards.com"
-						>Email: support@kzcards.com</a
-					>
-					<a href="tel:+71234567890">Телефон: +7 (123) 456-7890</a>
-					<a href="tg://resolve?domain=domain">Telegram: @domain</a>
-				</article>
-			</div>
-		</section>
-
-		<!-- Подвал сайта -->
+		<!-- Footer Section -->
 		<footer>
-			<div class="container">
-				<p>&copy; 2024 Казахаские карты Все права защищены.</p>
-			</div>
+			<p>© 2024</p>
+			<a href="#">Политика конфиденциальности</a>
 		</footer>
-
 		<script src="script.js"></script>
 	</body>
 </html>

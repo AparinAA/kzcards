@@ -1,4 +1,6 @@
 :root {
+	--background: #ffffff;
+	--foreground: #171717;
 	/* --accent-color: #007bff; */
 	--accent-color: #033776;
 	--accent-color-text: white;
@@ -6,7 +8,30 @@
 	--whatsup-color: #0dc143;
 	--telegram-color: #1898e0;
 }
-/* General styling */
+
+/* @media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
+} */
+
+html,
+body {
+	max-width: 100vw;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: var(--primary-color-text);
+	background-color: #f4f4f4;
+	max-width: 1250px;
+	margin: auto;
+	position: relative;
+}
 
 * {
 	margin: 0;
@@ -19,14 +44,11 @@ a {
 	color: var(--accent-color);
 }
 
-body {
-	font-family: "Open Sans", system-ui;
-	color: var(--primary-color-text);
-	background-color: #f4f4f4;
-	max-width: 1250px;
-	margin: auto;
-	position: relative;
-}
+/* @media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+} */
 
 header {
 	position: sticky;
@@ -84,8 +106,32 @@ header {
 	margin: 4px 0;
 }
 
+.mobile-image {
+	display: none;
+}
+
 @media screen and (max-width: 700px) {
-	nav ul {
+	.hero-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 15px;
+	}
+
+	.hero-content :is(button, a) {
+		width: 100%;
+		margin-inline: auto;
+	}
+
+	.mobile-image {
+		display: block;
+	}
+
+	.desktop-image {
+		display: none;
+	}
+
+	.nav ul {
 		position: fixed;
 		z-index: 100;
 		overflow: hidden;
@@ -136,9 +182,10 @@ header {
 /* Hero Section */
 .hero {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	padding: 100px 2%;
 	background-color: #ffffff;
+	gap: 30px;
 }
 
 .hero-content {
@@ -161,6 +208,7 @@ header {
 
 .cta-button,
 .info-button {
+	text-align: center;
 	padding: 15px 30px;
 	border: none;
 	color: white;
@@ -171,7 +219,17 @@ header {
 	border-radius: 12px;
 }
 
-:is(.cta-button, .info-button):hover {
+.info-button {
+	background-color: #fff;
+	color: var(--primary-color-text);
+	border: 1px solid #d1d1d1;
+}
+
+.info-button:hover {
+	background-color: #d1d1d1;
+}
+
+.cta-button:hover {
 	opacity: 0.9;
 }
 
@@ -179,7 +237,6 @@ header {
 	width: 310px;
 	height: 230px;
 	overflow: hidden;
-	margin-inline: auto;
 }
 
 .card-image img {
