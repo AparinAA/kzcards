@@ -262,11 +262,11 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section class="form-container">
+			<section className="form-container">
 				<h2>Оформление заявки</h2>
 				<p>Заполните поля и мы свяжемся с вами в ближайшее время</p>
 				<form action="#">
-					<label for="name">Ваше имя</label>
+					<label htmlFor="name">Ваше имя</label>
 					<input
 						type="text"
 						id="name"
@@ -274,7 +274,7 @@ export default function Home() {
 						required
 					/>
 
-					<label for="phone">Телефон</label>
+					<label htmlFor="phone">Телефон</label>
 					<input
 						type="tel"
 						id="phone"
@@ -282,12 +282,12 @@ export default function Home() {
 						required
 					/>
 
-					<label for="promo">Промокод</label>
+					<label htmlFor="promo">Промокод</label>
 					<input type="text" id="promo" placeholder="Промокод" />
 
-					<div class="checkbox-container">
+					<div className="checkbox-container">
 						<input type="checkbox" id="agreement" required />
-						<label for="agreement">
+						<label htmlFor="agreement">
 							Нажимая “Отправить заявку” вы даете согласие на
 							<a href="#">обработку персональных данных</a>
 						</label>
