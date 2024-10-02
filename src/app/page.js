@@ -1,6 +1,4 @@
 import Image from "next/image";
-import styles from "./page.module.css";
-import classNames from "classnames";
 
 export default function Home() {
 	return (
@@ -266,7 +264,7 @@ export default function Home() {
 				<h2>Оформление заявки</h2>
 				<p>Заполните поля и мы свяжемся с вами в ближайшее время</p>
 				<form action="#">
-					<label htmlFor="name">Ваше имя</label>
+					{/* <label htmlFor="name">Ваше имя</label> */}
 					<input
 						type="text"
 						id="name"
@@ -274,26 +272,27 @@ export default function Home() {
 						required
 					/>
 
-					<label htmlFor="phone">Телефон</label>
+					{/* <label htmlFor="phone">Телефон</label> */}
+					<input type="tel" id="phone" placeholder="Телефон" />
+
+					{/* <label htmlFor="telegram">Аккаунт Telegram</label> */}
 					<input
-						type="tel"
-						id="phone"
-						placeholder="Телефон"
-						required
+						type="text"
+						id="atelegram"
+						placeholder="Аккаунт Telegram"
 					/>
 
-					<label htmlFor="promo">Промокод</label>
-					<input type="text" id="promo" placeholder="Промокод" />
-
-					<div className="checkbox-container">
-						<input type="checkbox" id="agreement" required />
+					<div className="form-agreement">
+						{/* <input type="checkbox" id="agreement" required /> */}
 						<label htmlFor="agreement">
-							Нажимая “Отправить заявку” вы даете согласие на
-							<a href="#">обработку персональных данных</a>
+							Нажимая <b>Отправить заявку</b> вы даете согласие на
+							обработку персональных данных
 						</label>
 					</div>
 
-					<button type="submit">Отправить заявку</button>
+					<button type="submit" className="cta-button">
+						Отправить заявку
+					</button>
 				</form>
 			</section>
 
@@ -301,12 +300,6 @@ export default function Home() {
 				<h3>Контакты и реквизиты</h3>
 				<p>Менеджер Роман</p>
 				<p>+7 911 111 11 11</p>
-				<p>
-					E-mail:
-					<a href="mailto:world.card.shop8@gmail.com">
-						world.card.shop8@gmail.com
-					</a>
-				</p>
 				<a className="contact_button whatsapp_button" href="">
 					Написать в WhatsApp
 				</a>

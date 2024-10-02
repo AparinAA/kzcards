@@ -466,3 +466,62 @@ footer a {
 	max-width: 80px;
 	margin-bottom: 20px;
 }
+
+.form-container {
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+.form-container h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.form-container p {
+	font-size: 16px;
+	margin-bottom: 20px;
+	color: #666;
+}
+
+.form-container form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-container input[type="text"],
+.form-container input[type="tel"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+.form-container input[type="checkbox"] {
+	margin-right: 10px;
+}
+
+.form-agreement {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-bottom: 20px;
+	font-size: 0.8rem;
+	opacity: 0.8;
+}
+
+.form-container button {
+	width: 100%;
+}
+
+/* .form-container button:hover {
+	background-color: #004a9a;
+} */
