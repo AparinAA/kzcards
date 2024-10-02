@@ -1,4 +1,22 @@
 import Image from "next/image";
+import { createConsultation, createRequest } from "./actions/pushTelegram";
+
+const check = (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width={30}
+		height={30}
+		className="check"
+		styles={{
+			verticalAlign: "middle",
+			overflow: "hidden",
+		}}
+		viewBox="0 0 1024 1024"
+		version="1.1"
+	>
+		<path d="M384 689.92L206.08 512l-60.373333 60.373333L384 810.666667l512-512-60.373333-60.373334z" />
+	</svg>
+);
 
 export default function Home() {
 	return (
@@ -38,16 +56,19 @@ export default function Home() {
 					<h1>Международные карты</h1>
 					<div className="card-image mobile-image">
 						<Image
-							src="/card.webp"
+							src="/Master_Card.svg"
 							width={300}
-							height={300}
+							height={200}
 							alt="Mastercard"
 						/>
 					</div>
 					<div className="hero-features">
-						<div>Готовая карта за 5-7 рабочих дней</div>
-						<div>Удаленное оформление</div>
-						<div>Гарантия лучшей цены</div>
+						<div>
+							{check}
+							Готовая карта за 5-7 рабочих дней
+						</div>
+						<div>{check} Удаленное оформление</div>
+						<div>{check} Гарантия лучшей цены</div>
 					</div>
 					<button className="cta-button">Оформить</button>
 					<a className="info-button" href="#services">
@@ -56,9 +77,9 @@ export default function Home() {
 				</div>
 				<div className="card-image desktop-image">
 					<Image
-						src="/card.webp"
+						src="/Master_Card.svg"
 						width={300}
-						height={300}
+						height={200}
 						alt="Mastercard"
 					/>
 				</div>
@@ -149,9 +170,9 @@ export default function Home() {
 			<section id="steps" className="block steps">
 				<div className="card-image">
 					<Image
-						src="/card.webp"
+						src="/Master_Card.svg"
 						width={300}
-						height={300}
+						height={200}
 						alt="Mastercard"
 						className=""
 					/>
@@ -231,85 +252,142 @@ export default function Home() {
 			</section>
 			<section id="consultation" className="block consultation">
 				<h3>Бесплатная консультация</h3>
-				<form>
-					<input type="text" placeholder="Ваше имя" required />
-					<input type="tel" placeholder="Телефон" required />
-					<button type="submit">Оставить заявку</button>
-				</form>
-			</section>
-
-			<section id="features" className="block features">
-				<h3>Почему выбирают именно нас?</h3>
-				<div className="feature">
-					<h4>Поддержка на всех этапах</h4>
-					<p>
-						Консультируем подробно и быстро 24/7, есть услуга
-						“персональный менеджер”.
-					</p>
-				</div>
-				<div className="feature">
-					<h4>Быстрая доставка</h4>
-					<p>Быстро доставим вашу карту в регионы и по Москве.</p>
-				</div>
-				<div className="feature">
-					<h4>Гарантия возврата денег</h4>
-					<p>
-						Вернем все в полном объеме, если не выполним
-						обязательства.
-					</p>
-				</div>
-			</section>
-
-			<section className="form-container">
-				<h2>Оформление заявки</h2>
-				<p>Заполните поля и мы свяжемся с вами в ближайшее время</p>
-				<form action="#">
-					{/* <label htmlFor="name">Ваше имя</label> */}
+				<form action={createConsultation}>
 					<input
 						type="text"
-						id="name"
 						placeholder="Ваше имя"
+						name="name"
 						required
 					/>
-
-					{/* <label htmlFor="phone">Телефон</label> */}
-					<input type="tel" id="phone" placeholder="Телефон" />
-
-					{/* <label htmlFor="telegram">Аккаунт Telegram</label> */}
 					<input
 						type="text"
-						id="atelegram"
-						placeholder="Аккаунт Telegram"
+						placeholder="Телефон или Telegram"
+						name="contact"
+						required
 					/>
-
-					<div className="form-agreement">
-						{/* <input type="checkbox" id="agreement" required /> */}
-						<label htmlFor="agreement">
-							Нажимая <b>Отправить заявку</b> вы даете согласие на
-							обработку персональных данных
-						</label>
-					</div>
-
-					<button type="submit" className="cta-button">
-						Отправить заявку
+					<button
+						type="submit"
+						className="info-button"
+						style={{
+							margin: "0 !important",
+							width: "100% !important",
+						}}
+					>
+						Оставить заявку
 					</button>
 				</form>
+				<p style={{ textAlign: "right", width: "100%" }}>
+					<span style={{ fontSize: "0.9rem" }}>
+						Нажимая <b>Отправить заявку</b> вы даете согласие на
+						обработку персональных данных
+					</span>
+				</p>
+			</section>
+
+			<section id="features" className="block features-block">
+				<h2>Почему выбирают именно нас?</h2>
+				<div className="features">
+					<div className="feature support">
+						<h4>Поддержка на всех этапах</h4>
+						<p>
+							Консультируем подробно и быстро 24/7, есть услуга
+							“персональный менеджер”.
+						</p>
+					</div>
+					<div className="feature delivery">
+						<h4>Быстрая доставка</h4>
+						<p>Быстро доставим вашу карту в регионы и по Москве.</p>
+					</div>
+					<div className="feature protect">
+						<h4>Бесплатные инструкции</h4>
+						<p>
+							Расскажем, как пополнить счет, как получить перевод,
+							как оплатить товары и услуги
+						</p>
+					</div>
+					<div className="feature instruction">
+						<h4>Гарантия возврата денег</h4>
+						<p>
+							Вернем все в полном объеме, если не выполним
+							обязательства.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section className="block">
+				<div className="form-container">
+					<h2>Оформление заявки</h2>
+					<p>Заполните поля и мы свяжемся с вами в ближайшее время</p>
+					<form action={createRequest}>
+						{/* <label htmlFor="name">Ваше имя</label> */}
+						<input
+							type="text"
+							id="name"
+							placeholder="Ваше имя"
+							name="name"
+							required
+						/>
+
+						{/* <label htmlFor="phone">Телефон</label> */}
+						<input
+							type="tel"
+							id="phone"
+							placeholder="Телефон"
+							name="tel"
+						/>
+
+						{/* <label htmlFor="telegram">Аккаунт Telegram</label> */}
+						<input
+							type="text"
+							id="atelegram"
+							placeholder="Аккаунт Telegram"
+							name="telegram"
+						/>
+
+						<div className="form-agreement">
+							{/* <input type="checkbox" id="agreement" required /> */}
+							<label htmlFor="agreement">
+								Нажимая <b>Отправить заявку</b> вы даете
+								согласие на обработку персональных данных
+							</label>
+						</div>
+
+						<button type="submit" className="cta-button">
+							Отправить заявку
+						</button>
+					</form>
+				</div>
 			</section>
 
 			<section id="contact" className="block contact">
-				<h3>Контакты и реквизиты</h3>
-				<p>Менеджер Роман</p>
-				<p>+7 911 111 11 11</p>
-				<a className="contact_button whatsapp_button" href="">
-					Написать в WhatsApp
-				</a>
-				<a
-					className="contact_button telegram_button"
-					href=""
-					target="_blank"
-				>
-					Написать в Telegram
-				</a>
+				<h3>Контакты</h3>
+				<div>
+					<p>
+						<b>Менеджер Роман</b>
+					</p>
+					<a
+						href="tel:+7-914-008-82-51"
+						target="_blank"
+						className="contact_button telephone_button"
+					>
+						+7 (914) 008-82-51
+					</a>
+					<a
+						className="contact_button whatsapp_button"
+						href="https://wa.me/79140088251"
+						target="_blank"
+					>
+						Написать в WhatsApp
+					</a>
+					<a
+						className="contact_button telegram_button"
+						href="tg://resolve?domain=i11lcard/"
+						target="_blank"
+					>
+						Написать в Telegram
+					</a>
+				</div>
 			</section>
 
 			<footer>
