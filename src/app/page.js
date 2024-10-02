@@ -48,7 +48,9 @@ export default function Home() {
 						<div>{check} Удаленное оформление</div>
 						<div>{check} Гарантия лучшей цены</div>
 					</div>
-					<button className="cta-button">Оформить</button>
+					<a className="cta-button" href="#request">
+						Оформить
+					</a>
 					<a className="info-button" href="#services">
 						Подробнее
 					</a>
@@ -182,7 +184,9 @@ export default function Home() {
 							рабочих дней.
 						</p>
 					</div>
-					<button className="cta-button">Оформить</button>
+					<a className="cta-button" href="#request">
+						Оформить
+					</a>
 				</div>
 			</section>
 
@@ -209,7 +213,9 @@ export default function Home() {
 							корона
 						</li>
 					</ul>
-					<button className="cta-button">Оформить</button>
+					<a className="cta-button" href="#request">
+						Оформить
+					</a>
 				</div>
 			</section>
 
@@ -293,7 +299,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="block">
+			<section id="request" className="block">
 				<div className="form-container">
 					<h2>Оформление заявки</h2>
 					<p>Заполните поля и мы свяжемся с вами в ближайшее время</p>

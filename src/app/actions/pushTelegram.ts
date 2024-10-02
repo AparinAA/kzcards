@@ -31,8 +31,7 @@ export async function createRequest(formData: FormData) {
 	const telegram = formData.get("telegram") ?? "Нет телеграма";
 	const tel = formData.get("tel") ?? "Нет телефона";
 
-	const message = `----------------------  
-*Новая заявка *  
+	const message = `*Новая заявка *  
 _${getCurrentDateRequest()}_  
 
 *Имя:* ${name}  
@@ -46,8 +45,7 @@ export async function createConsultation(formData: FormData) {
 	const name = formData.get("name") ?? "Нет имени";
 	const contact = formData.get("contact") ?? "Нет контактов";
 
-	const message = `----------------------  
-*Новый запрос на консультацию *  
+	const message = `*Новый запрос на консультацию *  
 _${getCurrentDateRequest()}_  
 
 *Имя:* ${name}  
