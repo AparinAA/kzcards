@@ -23,7 +23,9 @@ body {
 }
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
+	/* font-family: Arial, Helvetica, sans-serif; */
+	font-family: var(--font-geist-sans);
+	font-size: 18px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: var(--primary-color-text);
@@ -70,6 +72,10 @@ header {
 	color: white;
 }
 
+.logo {
+	font-size: 1.5rem;
+}
+
 .navbar ul {
 	display: flex;
 	list-style: none;
@@ -111,6 +117,10 @@ header {
 }
 
 @media screen and (max-width: 700px) {
+	body {
+		font-size: 16px;
+	}
+
 	.hero-content {
 		display: flex;
 		flex-direction: column;

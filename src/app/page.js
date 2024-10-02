@@ -4,7 +4,7 @@ export default function Home() {
 	return (
 		<>
 			<header>
-				<div className="logo">Worldcard.shop</div>
+				<div className="logo">I11l.card</div>
 				<div className="navbar">
 					<nav>
 						<ul id="nav-menu" className="nav-links">
