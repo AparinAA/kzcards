@@ -13,8 +13,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-	title: "I11l cards",
-	description: "Международные карты",
+	title: "Международные карты",
+	description: "Оформление международных карт онлайн",
 };
 
 export default function RootLayout({ children }) {
