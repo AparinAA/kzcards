@@ -1,27 +1,7 @@
 "use client";
-import React, { useEffect } from "react";
-
+import { useSmoothScroll } from "../../hooks";
 function NavBar() {
-	useEffect(() => {
-		const anchors = document.querySelectorAll('a[href^="#"]');
-
-		anchors.forEach((anchor) => {
-			const handleClick = (e) => {
-				e.preventDefault();
-				document
-					.querySelector(anchor.getAttribute("href"))
-					.scrollIntoView({ behavior: "smooth" });
-			};
-
-			anchor.addEventListener("click", handleClick);
-
-			return () => {
-				anchors.forEach((anchor) => {
-					anchor.removeEventListener("click", handleClick);
-				});
-			};
-		});
-	}, []);
+	useSmoothScroll();
 
 	return (
 		<nav>
