@@ -276,6 +276,11 @@ header {
 	margin-bottom: 20px;
 }
 
+.services-logos {
+	max-width: 600px;
+	margin: auto;
+}
+
 .services-logos img {
 	width: 80px;
 	height: 40px;
