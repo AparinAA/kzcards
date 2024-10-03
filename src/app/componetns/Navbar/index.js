@@ -1,28 +1,56 @@
 "use client";
+import { useState } from "react";
 import { useSmoothScroll } from "../../hooks";
+import classNames from "classnames";
+
 function NavBar() {
+	const [active, setActive] = useState();
+	const [burger, setBurger] = useState();
+
 	useSmoothScroll();
+
+	const handlerClickBurger = () => {
+		setActive((on) => !on);
+		setBurger((on) => !on);
+	};
 
 	return (
 		<nav>
-			<ul id="nav-menu" className="nav-links">
+			<ul
+				id="nav-menu"
+				className={classNames({ "nav-links": true, "active": active })}
+			>
 				<li>
-					<a href="#steps">Как открыть</a>
+					<a href="#steps" onClick={handlerClickBurger}>
+						Как открыть
+					</a>
 				</li>
 				<li>
-					<a href="#testimonials">Отзывы</a>
+					<a href="#testimonials" onClick={handlerClickBurger}>
+						Отзывы
+					</a>
 				</li>
 				<li>
-					<a href="#pricing">Стоимость</a>
+					<a href="#pricing" onClick={handlerClickBurger}>
+						Стоимость
+					</a>
 				</li>
 				<li>
-					<a href="#consultation">Консультация</a>
+					<a href="#consultation" onClick={handlerClickBurger}>
+						Консультация
+					</a>
 				</li>
 				<li>
-					<a href="#contact">Контакты</a>
+					<a href="#contact" onClick={handlerClickBurger}>
+						Контакты
+					</a>
 				</li>
 			</ul>
-			<div className="burger" id="burger-menu">
+			<div
+				className={classNames({ burger: true, toggle: burger })}
+				id="burger-menu"
+				onClick={handlerClickBurger}
+			>
 				<div className="line1"></div>
 				<div className="line2"></div>
 				<div className="line3"></div>

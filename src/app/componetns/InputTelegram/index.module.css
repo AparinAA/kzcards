@@ -1,0 +1,11 @@
+.telegramLabel {
+	position: relative;
+	width: 100%;
+}
+
+.telegramAt {
+	position: absolute;
+	left: 10px;
+	top: 8.5px;
+	font-size: 18px;
+}

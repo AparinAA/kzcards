@@ -1,5 +1,6 @@
 "use server";
 
+import { randomUUID } from "crypto";
 import TelegramBot from "node-telegram-bot-api";
 
 const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
@@ -7,6 +8,10 @@ const chatId = process.env.TELEGRAM_CHAT_ID;
 const chatIdMy = process.env.TELEGRAM_CHAT_ID_MY;
 
 const bot = new TelegramBot(telegramBotToken, { polling: false });
+
+function sleep(ms: number) {
+	return new Promise((res) => setTimeout(res, ms));
+}
 
 function sendMessage(chatId: string, message: string) {
 	return bot.sendMessage(chatId, message, { parse_mode: "Markdown" });
@@ -26,7 +31,7 @@ function getCurrentDateRequest() {
 	return `${day}/${month}/${year} ${hours}:${minutes}`;
 }
 
-export async function createRequest(formData: FormData) {
+export async function createRequest(prevState: any, formData: FormData) {
 	const name = formData.get("name") ?? "Нет имени";
 	const telegram = formData.get("telegram") ?? "Нет телеграма";
 	const tel = formData.get("tel") ?? "Нет телефона";
@@ -38,7 +43,21 @@ _${getCurrentDateRequest()}_
 *Номер телефона:* ${tel}  
 *Ник в Телеграм:* ${telegram}`;
 
-	await newsteller([chatId, chatIdMy], message);
+	try {
+		await sleep(1000);
+		await newsteller([chatId, chatIdMy], message);
+		return {
+			message: "Заявка успешно отправлена",
+			error: false,
+			id: randomUUID(),
+		};
+	} catch {
+		return {
+			message: "Заявка не отправилась, попробуйте еще раз позже",
+			error: true,
+			id: randomUUID(),
+		};
+	}
 }
 
 export async function createConsultation(formData: FormData) {
@@ -50,6 +69,19 @@ _${getCurrentDateRequest()}_
 
 *Имя:* ${name}  
 *Номер контакты:* ${contact}`;
-
-	await newsteller([chatId, chatIdMy], message);
+	try {
+		await sleep(1000);
+		await newsteller([chatId, chatIdMy], message);
+		return {
+			message: "Заявка успешно отправлена",
+			error: false,
+			id: randomUUID(),
+		};
+	} catch {
+		return {
+			message: "Заявка не отправилась, попробуйте еще раз позже",
+			error: true,
+			id: randomUUID(),
+		};
+	}
 }

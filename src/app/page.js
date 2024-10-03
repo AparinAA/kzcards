@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { createConsultation, createRequest } from "./actions/pushTelegram";
 import NavBar from "./componetns/Navbar";
+import Services from "./componetns/Services";
+import FormRequest from "./componetns/FormRequest";
 
 const check = (
 	<svg
@@ -65,87 +67,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section id="services" className="block services">
-				<h2>Оплачивайте любимые сервисы и живите как раньше</h2>
-				<p>
-					Карты иностранных банков принимаются к оплате всеми
-					европейскими и американскими сервисами.
-				</p>
-				<div className="services-logos">
-					<Image
-						src="/airbnb-ar21.svg"
-						width={40}
-						height={40}
-						alt="Airbnb"
-					/>
-					<Image
-						src="/amazon-ar21.svg"
-						width={40}
-						height={40}
-						alt="Amazon"
-					/>
-					<Image
-						src="/apple_appstore-ar21.svg"
-						width={40}
-						height={40}
-						alt="Apple App Store"
-					/>
-					<Image
-						src="/booking-ar21.svg"
-						width={40}
-						height={40}
-						alt="Booking"
-					/>
-					<Image
-						src="/canva-ar21.svg"
-						width={40}
-						height={40}
-						alt="Canva"
-					/>
-					<Image
-						src="/ebay-ar21.svg"
-						width={40}
-						height={40}
-						alt="Ebay"
-					/>
-					<Image
-						src="/figma-ar21.svg"
-						width={40}
-						height={40}
-						alt="Figma"
-					/>
-					<Image
-						src="/netflix-ar21.svg"
-						width={40}
-						height={40}
-						alt="Netflix"
-					/>
-					<Image
-						src="/spotify-ar21.svg"
-						width={40}
-						height={40}
-						alt="Spotify"
-					/>
-					<Image
-						src="/xbox-ar21.svg"
-						width={40}
-						height={40}
-						alt="Xbox"
-					/>
-					<Image
-						src="/youtube-ar21.svg"
-						width={40}
-						height={40}
-						alt="YouTube"
-					/>
-					<Image
-						src="/zoomus-ar21.svg"
-						width={40}
-						height={40}
-						alt="Zoom"
-					/>
-				</div>
-			</section>
+			<Services />
 
 			<section id="steps" className="block steps">
 				<div className="card-image">
@@ -195,7 +117,7 @@ export default function Home() {
 					<div className="pricing-header">
 						<div className="pricing-header-pr">
 							<h3>Международная карта</h3>
-							<p>12 000 ₽</p>
+							{/* <p>12 000 ₽</p> */}
 						</div>
 						<Image
 							src="/mastercard-logo.svg"
@@ -303,44 +225,7 @@ export default function Home() {
 				<div className="form-container">
 					<h2>Оформление заявки</h2>
 					<p>Заполните поля и мы свяжемся с вами в ближайшее время</p>
-					<form action={createRequest}>
-						{/* <label htmlFor="name">Ваше имя</label> */}
-						<input
-							type="text"
-							id="name"
-							placeholder="Ваше имя"
-							name="name"
-							required
-						/>
-
-						{/* <label htmlFor="phone">Телефон</label> */}
-						<input
-							type="tel"
-							id="phone"
-							placeholder="Телефон"
-							name="tel"
-						/>
-
-						{/* <label htmlFor="telegram">Аккаунт Telegram</label> */}
-						<input
-							type="text"
-							id="atelegram"
-							placeholder="Аккаунт Telegram"
-							name="telegram"
-						/>
-
-						<div className="form-agreement">
-							{/* <input type="checkbox" id="agreement" required /> */}
-							<label htmlFor="agreement">
-								Нажимая <b>Отправить заявку</b> вы даете
-								согласие на обработку персональных данных
-							</label>
-						</div>
-
-						<button type="submit" className="cta-button">
-							Отправить заявку
-						</button>
-					</form>
+					<FormRequest />
 				</div>
 			</section>
 
