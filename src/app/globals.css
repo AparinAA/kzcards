@@ -300,7 +300,7 @@ header {
 }
 
 .features {
-	gap: 25px;
+	gap: 18px;
 	place-items: flex-start;
 }
 .feature {
@@ -500,7 +500,7 @@ footer a {
 	gap: 12px;
 }
 
-.contact h3 {
+.contact h2 {
 	text-align: center;
 }
 

@@ -219,7 +219,7 @@ export default function Home() {
 				</section>
 
 				<section id="contact" className="block contact">
-					<h3>Контакты</h3>
+					<h2>Контакты</h2>
 					<div>
 						<p>
 							<b>Менеджер Роман</b>
