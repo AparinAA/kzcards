@@ -19,7 +19,8 @@ function sendMessage(chatId: string, message: string) {
 
 async function newsteller(chatIds: string[], message: string) {
 	for (const chatId of chatIds) {
-		sendMessage(chatId, message);
+		await sendMessage(chatId, message);
+		await sleep(1000);
 	}
 }
 
@@ -47,7 +48,8 @@ _${getCurrentDateRequest()}_
 
 	try {
 		await sleep(1000);
-		await newsteller([chatId, chatIdMy], message);
+		const response = await newsteller([chatId, chatIdMy], message);
+		console.info(response);
 		return {
 			message: "Заявка успешно отправлена",
 			error: false,
@@ -73,7 +75,8 @@ _${getCurrentDateRequest()}_
 *Номер контакты:* ${contact}`;
 	try {
 		await sleep(1000);
-		await newsteller([chatId, chatIdMy], message);
+		const response = await newsteller([chatId, chatIdMy], message);
+		console.info(response);
 		return {
 			message: "Заявка успешно отправлена",
 			error: false,
