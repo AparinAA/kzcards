@@ -47,15 +47,14 @@ _${getCurrentDateRequest()}_
 *Ник в Телеграм:* ${telegram}`;
 
 	try {
-		await sleep(1000);
-		const response = await newsteller([chatId, chatIdMy], message);
-		console.info(response);
+		await newsteller([chatId, chatIdMy], message);
 		return {
 			message: "Заявка успешно отправлена",
 			error: false,
 			id: randomUUID(),
 		};
-	} catch {
+	} catch (error) {
+		console.info(error);
 		return {
 			message: "Заявка не отправилась, попробуйте еще раз позже",
 			error: true,
@@ -74,15 +73,14 @@ _${getCurrentDateRequest()}_
 *Имя:* ${name}  
 *Номер контакты:* ${contact}`;
 	try {
-		await sleep(1000);
-		const response = await newsteller([chatId, chatIdMy], message);
-		console.info(response);
+		await newsteller([chatId, chatIdMy], message);
 		return {
 			message: "Заявка успешно отправлена",
 			error: false,
 			id: randomUUID(),
 		};
-	} catch {
+	} catch (error) {
+		console.info(error);
 		return {
 			message: "Заявка не отправилась, попробуйте еще раз позже",
 			error: true,
