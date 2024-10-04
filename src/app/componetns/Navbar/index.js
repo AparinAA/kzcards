@@ -30,11 +30,11 @@ function NavBar() {
 						Отзывы
 					</a>
 				</li>
-				<li>
+				{/* <li>
 					<a href="#pricing" onClick={handlerClickBurger}>
 						Стоимость
 					</a>
-				</li>
+				</li> */}
 				<li>
 					<a href="#consultation" onClick={handlerClickBurger}>
 						Консультация

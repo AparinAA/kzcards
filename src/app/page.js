@@ -4,6 +4,7 @@ import NavBar from "./componetns/Navbar";
 import Services from "./componetns/Services";
 import FormRequest from "./componetns/FormRequest";
 import FormConsultation from "./componetns/FormConsultation";
+import Reviews from "./componetns/Reviews";
 
 const check = (
 	<svg
@@ -146,21 +147,9 @@ export default function Home() {
 						</a>
 					</div>
 				</section>
-
 				<section id="testimonials" className="block testimonials">
 					<h2>Отзывы довольных клиентов</h2>
-					<div className="testimonial">
-						<p>
-							Отличная карта! Оформил быстро, все сервисы работают
-							без проблем.
-						</p>
-					</div>
-					<div className="testimonial">
-						<p>
-							Очень доволен. Все было сделано за несколько дней,
-							карта работает идеально.
-						</p>
-					</div>
+					<Reviews />
 				</section>
 				<section id="consultation" className="block consultation">
 					<h3>Бесплатная консультация</h3>
