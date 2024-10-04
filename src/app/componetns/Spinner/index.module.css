@@ -3,11 +3,16 @@
 	width: 18.5px;
 	height: 18.5px;
 	border: 2px solid #fff;
-	border-bottom-color: transparent;
+	border-bottom-color: #ffffff00;
 	border-radius: 50%;
 	display: inline-block;
 	box-sizing: border-box;
 	animation: rotation 1s linear infinite;
+}
+
+.black {
+	border-color: var(--primary-color-text);
+	border-bottom-color: #ffffff00;
 }
 
 @keyframes rotation {

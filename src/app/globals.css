@@ -329,8 +329,8 @@ header {
 	top: 0px;
 	left: -50px;
 	display: block;
-	width: 10dvw;
-	height: 10dvw;
+	width: 40px;
+	height: 40px;
 }
 
 .support::before {

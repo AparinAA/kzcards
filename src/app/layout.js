@@ -21,6 +21,15 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="ru">
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+				<div
+					id="toaster"
+					style={{
+						position: "absolute",
+						right: "0",
+						top: "0",
+						zIndex: "100000",
+					}}
+				/>
 				{children}
 			</body>
 		</html>

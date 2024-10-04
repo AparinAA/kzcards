@@ -3,6 +3,7 @@ import { createConsultation, createRequest } from "./actions/pushTelegram";
 import NavBar from "./componetns/Navbar";
 import Services from "./componetns/Services";
 import FormRequest from "./componetns/FormRequest";
+import FormConsultation from "./componetns/FormConsultation";
 
 const check = (
 	<svg
@@ -163,30 +164,7 @@ export default function Home() {
 				</section>
 				<section id="consultation" className="block consultation">
 					<h3>Бесплатная консультация</h3>
-					<form action={createConsultation}>
-						<input
-							type="text"
-							placeholder="Ваше имя"
-							name="name"
-							required
-						/>
-						<input
-							type="text"
-							placeholder="Телефон или Telegram"
-							name="contact"
-							required
-						/>
-						<button
-							type="submit"
-							className="info-button"
-							style={{
-								margin: "0 !important",
-								width: "100% !important",
-							}}
-						>
-							Оставить заявку
-						</button>
-					</form>
+					<FormConsultation />
 					<p style={{ textAlign: "right", width: "100%" }}>
 						<span style={{ fontSize: "0.9rem" }}>
 							Нажимая <b>Отправить заявку</b> вы даете согласие на

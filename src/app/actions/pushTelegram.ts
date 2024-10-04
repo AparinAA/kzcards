@@ -17,8 +17,10 @@ function sendMessage(chatId: string, message: string) {
 	return bot.sendMessage(chatId, message, { parse_mode: "Markdown" });
 }
 
-function newsteller(chatIds: string[], message: string) {
-	return Promise.all(chatIds.map((chatId) => sendMessage(chatId, message)));
+async function newsteller(chatIds: string[], message: string) {
+	for (const chatId of chatIds) {
+		sendMessage(chatId, message);
+	}
 }
 
 function getCurrentDateRequest() {
@@ -60,7 +62,7 @@ _${getCurrentDateRequest()}_
 	}
 }
 
-export async function createConsultation(formData: FormData) {
+export async function createConsultation(prevState: any, formData: FormData) {
 	const name = formData.get("name") ?? "Нет имени";
 	const contact = formData.get("contact") ?? "Нет контактов";
 

@@ -1,8 +1,9 @@
 import classNames from "classnames";
 import styles from "./index.module.css";
+import { createPortal } from "react-dom";
 
 function Toaster({ children, type, id }) {
-	return (
+	return createPortal(
 		<span
 			key={id}
 			aria-live="polite"
@@ -13,7 +14,8 @@ function Toaster({ children, type, id }) {
 			})}
 		>
 			{children}
-		</span>
+		</span>,
+		document.getElementById("toaster") || document.body
 	);
 }
 
