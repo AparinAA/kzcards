@@ -64,6 +64,15 @@ input {
 	}
 } */
 
+p {
+	overflow-wrap: break-word;
+	font-size: 1rem;
+}
+
+h3 {
+	font-size: 1.2rem;
+}
+
 header {
 	position: sticky;
 	top: 0;
@@ -76,11 +85,18 @@ header {
 	z-index: 1000;
 }
 
+.main {
+	position: fixed;
+	overflow-x: scroll;
+	height: calc(100% - 92.5px);
+	width: 100%;
+}
+
 /* Navbar */
 .navbar {
 	display: flex;
 	justify-content: space-between;
-	padding: 20px;
+	padding: 15px;
 	background-color: var(--accent-color);
 	color: white;
 	z-index: 100;
@@ -130,66 +146,6 @@ header {
 	display: none;
 }
 
-@media screen and (max-width: 700px) {
-	body {
-		font-size: 16px;
-	}
-
-	.hero-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 15px;
-	}
-
-	.hero-content :is(button, a) {
-		width: 100%;
-		margin-inline: auto;
-	}
-
-	.mobile-image {
-		display: block;
-	}
-
-	.desktop-image {
-		display: none;
-	}
-
-	nav ul {
-		position: fixed;
-		z-index: 1000;
-		overflow: hidden;
-		top: 90px;
-		left: 0;
-		height: calc(100vh - 90px);
-		width: 100%;
-		background-color: var(--accent-color);
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-around;
-		transition: transform 0.5s ease-in-out;
-		transform: translateX(100%);
-	}
-
-	nav ul li {
-		margin-left: 0;
-	}
-
-	nav ul li a {
-		font-size: 24px;
-	}
-
-	/* Показываем бургер-меню */
-	.burger {
-		display: flex;
-	}
-
-	/* Меню становится видимым при активном бургере */
-	nav ul.active {
-		transform: translateX(0);
-	}
-}
-
 /* Анимация для иконки бургера */
 .burger.toggle .line1 {
 	transform: rotate(-45deg) translate(-5px, 5px);
@@ -206,7 +162,8 @@ header {
 /* Hero Section */
 .hero {
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
+	align-items: center;
 	padding: 100px 2%;
 	background-color: #ffffff;
 	gap: 30px;
@@ -217,7 +174,7 @@ header {
 }
 
 .hero h1 {
-	font-size: 41px;
+	font-size: 2rem;
 	margin-bottom: 20px;
 	text-align: center;
 }
@@ -226,9 +183,16 @@ header {
 	margin-bottom: 20px;
 }
 
-.hero-features div {
-	font-size: 1.2rem;
+.hero-features p {
+	font-size: 1.1rem;
 	margin-bottom: 10px;
+}
+
+.button-group {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	width: 100%;
+	gap: 20px;
 }
 
 .cta-button,
@@ -260,7 +224,6 @@ header {
 }
 
 .card-image {
-	width: 310px;
 	height: 200px;
 }
 
@@ -296,7 +259,7 @@ header {
 .steps,
 .features {
 	background-color: #f9f9f9;
-
+	max-width: 100%;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	place-items: center;
@@ -356,8 +319,7 @@ header {
 }
 
 .feature p {
-	font-size: 16px;
-	font-weight: 400;
+	font-weight: 300;
 	color: #3d3d3d;
 }
 
@@ -367,8 +329,8 @@ header {
 	top: 0px;
 	left: -50px;
 	display: block;
-	width: 40px;
-	height: 40px;
+	width: 10dvw;
+	height: 10dvw;
 }
 
 .support::before {
@@ -388,7 +350,6 @@ header {
 }
 
 .step h3 {
-	font-size: 1.3rem;
 	color: #333;
 }
 
@@ -404,21 +365,27 @@ header {
 
 .step p {
 	margin-left: 50px;
-	font-size: 16px;
 	font-weight: 300;
 }
 
 /* Pricing Section */
 .pricing {
-	text-align: center;
+	display: grid;
+	place-items: center;
 }
 
 .pricing-card {
-	display: inline-block;
 	background-color: #ffffff;
 	color: black;
 	padding: 20px 0;
 	border-radius: 12px;
+	max-width: 500px;
+}
+
+.pricing-card a {
+	width: 100%;
+	max-width: 300px;
+	margin-inline: auto;
 }
 
 .pricing-header {
@@ -426,25 +393,21 @@ header {
 	display: flex;
 	background-color: var(--accent-color);
 	color: var(--accent-color-text);
-	gap: 15px;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: space-around;
 	padding: 10px;
 }
 
 .pricing-header img {
-	width: 50px;
+	width: 60px;
 }
 
 .pricing-header-pr p {
-	font-size: 32px;
 	text-align: left;
 }
 
-.pricing-header-pr h3 {
-	font-size: 30px;
+.pricing-header-pr {
 	text-align: left;
-	margin-bottom: 10px;
 }
 
 .pricing-card ul {
@@ -456,6 +419,7 @@ header {
 	text-align: left;
 	margin-bottom: 10px;
 	padding: 8px 0;
+	font-size: 1rem;
 }
 
 /* Testimonials Section */
@@ -487,7 +451,6 @@ header {
 }
 
 .consultation h3 {
-	font-size: 2rem;
 }
 
 .consultation form {
@@ -507,6 +470,8 @@ header {
 }
 
 footer {
+	position: relative;
+	bottom: 0;
 	background-color: var(--accent-color);
 	color: #fff;
 	padding: 20px;
@@ -535,12 +500,10 @@ footer a {
 }
 
 .contact h3 {
-	font-size: 2rem;
 	text-align: center;
 }
 
 .contact p {
-	font-size: 18px;
 	color: #333;
 }
 
@@ -596,7 +559,6 @@ footer a {
 }
 
 .form-container p {
-	font-size: 16px;
 	margin-bottom: 20px;
 	color: #666;
 }
@@ -642,4 +604,78 @@ footer a {
 	top: 6px;
 	fill: var(--accent-color);
 	margin-right: 3px;
+}
+
+@media screen and (max-width: 700px) {
+	body {
+		font-size: 16px;
+	}
+
+	.hero {
+		padding: 70px 2%;
+	}
+
+	.hero-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 15px;
+	}
+
+	.hero-content :is(button, a) {
+		width: 100%;
+		margin-inline: auto;
+	}
+
+	.mobile-image {
+		display: block;
+	}
+
+	.desktop-image {
+		display: none;
+	}
+
+	nav ul {
+		position: fixed;
+		z-index: 1000;
+		overflow: hidden;
+		top: 90px;
+		left: 0;
+		height: calc(100vh - 90px);
+		width: 100%;
+		background-color: var(--accent-color);
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		transition: transform 0.5s ease-in-out;
+		transform: translateX(100%);
+	}
+
+	nav ul li {
+		margin-left: 0;
+	}
+
+	nav ul li a {
+		font-size: 24px;
+	}
+
+	/* Показываем бургер-меню */
+	.burger {
+		display: flex;
+	}
+
+	/* Меню становится видимым при активном бургере */
+	nav ul.active {
+		transform: translateX(0);
+	}
+}
+
+@media screen and (max-width: 500px) {
+	body {
+		font-size: 14px;
+	}
+
+	.hero {
+		padding: 40px 2%;
+	}
 }
