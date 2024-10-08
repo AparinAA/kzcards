@@ -59,3 +59,10 @@
 .instruction::before {
 	background: url("/instruction.svg");
 }
+
+@media screen and (max-width: 500px) {
+	.features {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
