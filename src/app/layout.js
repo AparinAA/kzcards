@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Head from "next/head";
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -20,6 +21,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="ru">
+			<Head>
+				<meta
+					name="apple-mobile-web-app-status-bar-style"
+					content="black-translucent"
+				/>
+				<meta name="theme-color" content="#5cc599" />
+			</Head>
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				<div
 					id="toaster"
