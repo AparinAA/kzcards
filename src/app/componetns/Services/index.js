@@ -5,7 +5,7 @@ function Services() {
 		<section id="services" className="block services">
 			<h2>Оплачивайте любимые сервисы и живите как раньше</h2>
 			<p>
-				Карты иностранных банков принимаются к оплате всеми европейскими
+				Карты иностранного банка принимаются к оплате всеми европейскими
 				и американскими сервисами.
 			</p>
 			<div className="services-logos">
@@ -47,6 +47,12 @@ function Services() {
 					alt="Figma"
 				/>
 				<Image
+					src="/ggl_play-ar21.svg"
+					width={40}
+					height={40}
+					alt="google-play"
+				/>
+				<Image
 					src="/netflix-ar21.svg"
 					width={40}
 					height={40}
@@ -71,6 +77,7 @@ function Services() {
 					height={40}
 					alt="Zoom"
 				/>
+				<Image src="/ps-ar21.svg" width={40} height={40} alt="ps" />
 			</div>
 		</section>
 	);

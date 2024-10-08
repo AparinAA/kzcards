@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { createConsultation, createRequest } from "./actions/pushTelegram";
 import NavBar from "./componetns/Navbar";
 import Services from "./componetns/Services";
 import FormRequest from "./componetns/FormRequest";
 import FormConsultation from "./componetns/FormConsultation";
 import Reviews from "./componetns/Reviews";
+import { Steps } from "./componetns/Steps";
+import { Features } from "./componetns/Features";
 
 const check = (
 	<svg
@@ -27,7 +28,9 @@ export default function Home() {
 	return (
 		<>
 			<header>
-				<div className="logo">I11l.card</div>
+				<div id="logo" className="logo">
+					I11l.card
+				</div>
 				<div className="navbar">
 					<NavBar />
 				</div>
@@ -48,7 +51,7 @@ export default function Home() {
 						<div className="hero-features">
 							<p>
 								{check}
-								Готовая карта за 5-7 рабочих дней
+								Готовая карта за 5-8 рабочих дней
 							</p>
 							<p>{check} Удаленное оформление</p>
 							<p>{check} Гарантия лучшей цены</p>
@@ -74,48 +77,7 @@ export default function Home() {
 
 				<Services />
 
-				<section id="steps" className="block steps">
-					<div className="card-image">
-						<Image
-							src="/Master_Card.svg"
-							width={300}
-							height={200}
-							alt="Mastercard"
-							className=""
-						/>
-					</div>
-					<div>
-						<h2>Шаги открытия</h2>
-						<div className="step">
-							<h3>1 Оплата и отправка документов</h3>
-							<p>
-								Мы отправляем документы на создание ИИН. На его
-								создание уйдет 2-3 рабочих дня.
-							</p>
-						</div>
-						<div className="step">
-							<h3>2 Оформление карты</h3>
-							<p>
-								После получения ИИН подаем документы на открытие
-								счета (1-2 дня).
-							</p>
-						</div>
-						<div className="step">
-							<h3>3 Верификация</h3>
-							<p>Вам придет SMS с инструкциями по верификации.</p>
-						</div>
-						<div className="step">
-							<h3>4 Пластиковая карта</h3>
-							<p>
-								Заказ и доставка карты. Итог: процесс занимает
-								5-7 рабочих дней.
-							</p>
-						</div>
-						<a className="cta-button" href="#request">
-							Оформить
-						</a>
-					</div>
-				</section>
+				<Steps />
 
 				<section id="pricing" className="block pricing">
 					<div className="pricing-card">
@@ -124,7 +86,6 @@ export default function Home() {
 								<h2 className="pricing-header-pr">
 									Международная карта
 								</h2>
-								{/* <p>12 000 ₽</p> */}
 							</>
 							<Image
 								src="/mastercard-logo.svg"
@@ -134,13 +95,13 @@ export default function Home() {
 							/>
 						</div>
 						<ul>
-							<li>Срок изготовления: 7 рабочих дней</li>
-							<li>Срок действия: 3 года</li>
-							<li>Валюты: тенге, доллар, евро, рубль и др.</li>
+							<li>Время оформления: до 8 рабочих дней</li>
+							<li>Срок действия карты: до 3 лет</li>
 							<li>
-								Пополнение: Сбербанк, Райфайзен, МТС банк,
-								Золотая корона
+								Валюты: <b>KZT, USD, EUR, RUB, TRY, CNY</b>
 							</li>
+							<li>Выгодный курс конвертации валют</li>
+							<li>Возможность пополнения с банков России</li>
 						</ul>
 						<a className="cta-button" href="#request">
 							Оформить
@@ -152,7 +113,7 @@ export default function Home() {
 					<Reviews />
 				</section>
 				<section id="consultation" className="block consultation">
-					<h3>Бесплатная консультация</h3>
+					<h2>Бесплатная консультация</h2>
 					<FormConsultation />
 					<p style={{ textAlign: "right", width: "100%" }}>
 						<span style={{ fontSize: "0.9rem" }}>
@@ -162,39 +123,7 @@ export default function Home() {
 					</p>
 				</section>
 
-				<section id="features" className="block features-block">
-					<h2>Почему выбирают именно нас?</h2>
-					<div className="features">
-						<div className="feature support">
-							<h4>Поддержка на всех этапах</h4>
-							<p>
-								Консультируем подробно и быстро 24/7, есть
-								услуга “персональный менеджер”.
-							</p>
-						</div>
-						<div className="feature delivery">
-							<h4>Быстрая доставка</h4>
-							<p>
-								Быстро доставим вашу карту в регионы и по
-								Москве.
-							</p>
-						</div>
-						<div className="feature protect">
-							<h4>Бесплатные инструкции</h4>
-							<p>
-								Расскажем, как пополнить счет, как получить
-								перевод, как оплатить товары и услуги
-							</p>
-						</div>
-						<div className="feature instruction">
-							<h4>Гарантия возврата денег</h4>
-							<p>
-								Вернем все в полном объеме, если не выполним
-								обязательства.
-							</p>
-						</div>
-					</div>
-				</section>
+				<Features />
 
 				<section id="request" className="block">
 					<div className="form-container">
@@ -237,8 +166,10 @@ export default function Home() {
 					</div>
 				</section>
 				<footer>
-					<p>© 2024</p>
-					<a href="#">Политика конфиденциальности</a>
+					<a href="https://www.aparinaleksandr.site/" target="_blank">
+						Powered by Aparin Aleksandr
+					</a>
+					<p>&copy; 2024</p>
 				</footer>
 			</main>
 		</>
