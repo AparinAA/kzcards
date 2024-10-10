@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
 					content="black-translucent"
 				/>
 				<meta name="theme-color" content="#5cc599" />
+				<meta name="yandex-verification" content="ecdbd288aa7de175" />
 			</Head>
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				<div
