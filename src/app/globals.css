@@ -1,8 +1,8 @@
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
-	/* --accent-color: #007bff; */
-	--accent-color: #5cc599;
+	--accent-color: rgb(41, 135, 63);
+	/* --accent-color: #5cc599; */
 	--accent-color-text: white;
 	--primary-color-text: #171717;
 	--whatsup-color: #0dc143;
