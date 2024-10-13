@@ -21,7 +21,7 @@ export const metadata = {
 
 export default function RootLayout({ children, params }) {
 	return (
-		<html lang={params.lang}>
+		<html lang={params.lang || "ru"}>
 			<Head>
 				<meta
 					name="apple-mobile-web-app-status-bar-style"
