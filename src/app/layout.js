@@ -29,11 +29,11 @@ export default function RootLayout({ children, params }) {
 				/>
 				<meta name="theme-color" content="#5cc599" />
 				<meta name="yandex-verification" content="ecdbd288aa7de175" />
+				<link rel="canonical" href="https://i11lcard.ru" />
 			</Head>
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				<Script id="metrika" nonce="XUENAJFW123">
 					{`
-					
 					(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 					m[i].l=1*new Date();
 					for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
