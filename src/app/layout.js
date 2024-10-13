@@ -19,9 +19,9 @@ export const metadata = {
 	description: "Оформление международных карт онлайн",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, params }) {
 	return (
-		<html lang="ru">
+		<html lang={params.lang}>
 			<Head>
 				<meta
 					name="apple-mobile-web-app-status-bar-style"
@@ -69,4 +69,8 @@ export default function RootLayout({ children }) {
 			</body>
 		</html>
 	);
+}
+
+export async function generateStaticParams() {
+	return [{ lang: "ru" }];
 }

@@ -169,7 +169,7 @@ export default function Home() {
 					<a href="https://www.aparinaleksandr.site/" target="_blank">
 						Powered by Aparin Aleksandr
 					</a>
-					<p>&copy; 2024</p>
+					<p>&copy; Все права защищены i11lcards 2024</p>
 				</footer>
 			</main>
 		</>
