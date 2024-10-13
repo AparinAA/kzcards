@@ -42,10 +42,10 @@ export default function Home() {
 						<h1>Международные карты</h1>
 						<div className="card-image mobile-image">
 							<Image
-								src="/Master_Card.svg"
+								src="/Master_Card.webp"
 								width={300}
 								height={200}
-								alt="Mastercard"
+								alt="Mastercard банковская онлайн карта"
 							/>
 						</div>
 						<div className="hero-features">
@@ -67,10 +67,10 @@ export default function Home() {
 					</div>
 					<div className="card-image desktop-image">
 						<Image
-							src="/Master_Card.svg"
+							src="/Master_Card.webp"
 							width={300}
 							height={200}
-							alt="Mastercard"
+							alt="Mastercard оплата банковской картой"
 						/>
 					</div>
 				</section>
@@ -91,7 +91,7 @@ export default function Home() {
 								src="/mastercard-logo.svg"
 								height={50}
 								width={60}
-								alt="mastercard"
+								alt="лого онлайн международных карт"
 							/>
 						</div>
 						<ul>
@@ -102,6 +102,7 @@ export default function Home() {
 							</li>
 							<li>Выгодный курс конвертации валют</li>
 							<li>Возможность пополнения с банков России</li>
+							<li>Дистанционное открытие банковской карты</li>
 						</ul>
 						<a className="cta-button" href="#request">
 							Оформить
