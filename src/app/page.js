@@ -46,6 +46,8 @@ export default function Home() {
 								width={300}
 								height={200}
 								alt="Mastercard банковская онлайн карта"
+								loading="eager"
+								priority
 							/>
 						</div>
 						<div className="hero-features">
@@ -71,6 +73,8 @@ export default function Home() {
 							width={300}
 							height={200}
 							alt="Mastercard оплата банковской картой"
+							loading="eager"
+							priority
 						/>
 					</div>
 				</section>
