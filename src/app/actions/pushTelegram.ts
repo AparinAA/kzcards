@@ -1,6 +1,7 @@
 "use server";
 
 import { randomUUID } from "crypto";
+import { cookies } from "next/headers";
 import TelegramBot from "node-telegram-bot-api";
 
 const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
@@ -20,7 +21,7 @@ function sendMessage(chatId: string, message: string) {
 async function newsteller(chatIds: string[], message: string) {
 	for (const chatId of chatIds) {
 		await sendMessage(chatId, message);
-		await sleep(1000);
+		await sleep(700);
 	}
 }
 
@@ -34,7 +35,38 @@ function getCurrentDateRequest() {
 	return `${day}/${month}/${year} ${hours}:${minutes}`;
 }
 
+function guardManyRequest() {
+	const now = Date.now();
+	const value = cookies().get("ts")?.value;
+	return now - Number(value) < 10 * 1000;
+}
+
+function setCookiesTS() {
+	const now = Date.now();
+	const expires = now + 10 * 1000;
+	const httpOnly = true;
+	const secure = true;
+	const path = "/";
+
+	cookies().set("ts", now.toString(), {
+		httpOnly,
+		secure,
+		path,
+		expires,
+	});
+}
+
 export async function createRequest(prevState: any, formData: FormData) {
+	const manyRequestMessage = guardManyRequest();
+
+	if (manyRequestMessage) {
+		return {
+			message: "Между запросами прошло недостаточно времени",
+			error: true,
+			id: randomUUID(),
+		};
+	}
+
 	const name = formData.get("name") ?? "Нет имени";
 	const telegram = formData.get("telegram") ?? "Нет телеграма";
 	const tel = formData.get("tel") ?? "Нет телефона";
@@ -48,6 +80,7 @@ _${getCurrentDateRequest()}_
 
 	try {
 		await newsteller([chatId, chatIdMy], message);
+		setCookiesTS();
 		return {
 			message: "Заявка успешно отправлена",
 			error: false,
@@ -64,6 +97,16 @@ _${getCurrentDateRequest()}_
 }
 
 export async function createConsultation(prevState: any, formData: FormData) {
+	const manyRequestMessage = guardManyRequest();
+
+	if (manyRequestMessage) {
+		return {
+			message: "Между запросами прошло недостаточно времени",
+			error: true,
+			id: randomUUID(),
+		};
+	}
+
 	const name = formData.get("name") ?? "Нет имени";
 	const contact = formData.get("contact") ?? "Нет контактов";
 
@@ -74,6 +117,7 @@ _${getCurrentDateRequest()}_
 *Номер контакты:* ${contact}`;
 	try {
 		await newsteller([chatId, chatIdMy], message);
+		setCookiesTS();
 		return {
 			message: "Заявка успешно отправлена",
 			error: false,
